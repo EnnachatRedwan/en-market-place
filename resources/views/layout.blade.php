@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo">
-            <span>EN</span>-Jobs
+            <span>EN</span>-Market
         </div>
         <nav>
             <ul>
@@ -24,6 +24,8 @@
     </header>
     <main>
         @include('partials._hero')
+
+        @yield('content')
     </main>
 </body>
 
