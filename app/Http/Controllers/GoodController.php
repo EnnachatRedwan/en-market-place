@@ -9,7 +9,7 @@ class GoodController extends Controller
 {
     //index page
     public function index(){
-        return view('goods.index',['goods'=>Good::latest()->simplePaginate(6)]);
+        return view('goods.index',['goods'=>Good::latest()->simplePaginate(20)]);
     }
 
     public function show(Good $good){

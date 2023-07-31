@@ -14,8 +14,8 @@
                     @if (isset($good->seller_phone_number))
                         <p><i class="fa-solid fa-phone"></i> {{ $good->seller_phone_number }}</p>
                     @endif
-                    @if (isset($good->seller_phone_email))
-                        <a href="mailto:red@dd.com"><i class="fa-solid fa-envelope"></i> {{ $good->seller_phone_email }}</a>
+                    @if (isset($good->seller_email))
+                        <a href="mailto:red@dd.com"><i class="fa-solid fa-envelope"></i> {{ $good->seller_email }}</a>
                     @endif
                     <p class="price">{{ $good->price }}$</p>
                 </div>

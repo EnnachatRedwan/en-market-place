@@ -2,7 +2,7 @@
 
 @section('content')
 @include('partials._hero')
-    <div class="container grided">
+    <div id="items" class="container grided">
         @foreach ($goods as $good)
             <div class="good-item">
                 <div class="product-img">
@@ -13,7 +13,7 @@
                         <h1>{{ $good->title }}</h1>
                     </a>
                     <p><i class="fa-solid fa-location-dot"></i> {{ $good->location }}</p>
-                    <span>{{ $good->price }}$</span>
+                    <span class="price">{{ $good->price }}$</span>
                 </div>
             </div>
         @endforeach

@@ -20,7 +20,7 @@ class CreateGoodsTable extends Migration
             $table->double('price');
             $table->string('image')->nullable();
             $table->string('seller_phone_number')->nullable();
-            $table->string('seller_phone_email')->nullable();
+            $table->string('seller_email')->nullable();
             $table->string('location');
             $table->timestamps();
         });

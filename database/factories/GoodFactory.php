@@ -16,7 +16,9 @@ class GoodFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(5),
-            'price' => 15,
+            'price' => $this->faker->randomNumber(3),
+            'seller_email'=>$this->faker->email(),
+            'seller_phone_number'=>$this->faker->phoneNumber(),
             'location'=>$this->faker->address(),
         ];
     }
