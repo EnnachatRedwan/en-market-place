@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [GoodController::class,'index']);
+
+Route::get('/goods/{good}',[GoodController::class,'show']);

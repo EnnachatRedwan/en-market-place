@@ -5,18 +5,24 @@
     outline: none;
     font-family: "Open Sans", sans-serif;
 }
+body {
+    background-color: #f2f2f2;
+}
 
-.container{
+.container {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto auto;
     padding: 10px;
 }
 
-@media (max-width:800px) {
-    .container{
+.grided {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+@media (max-width: 900px) {
+    .container {
         width: 100%;
         max-width: 1300px;
         margin: 0 auto;
@@ -25,7 +31,7 @@
     }
 }
 
-/* ------------Header-------------- */
+/* ------------Header------------ */
 
 header {
     width: 100%;
@@ -33,6 +39,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    background-color: #fff;
 }
 
 header .logo {
@@ -42,6 +49,11 @@ header .logo {
 
 header .logo span {
     color: #0080ff;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #000;
 }
 
 header nav ul {
@@ -59,7 +71,7 @@ header nav ul li a:hover {
     color: #000;
 }
 
-header .btn-register{
+header .btn-register {
     color: #fff;
     background: linear-gradient(150deg, #158aff, #82c0ff);
     padding: 10px 25px;
@@ -67,12 +79,12 @@ header .btn-register{
     border: #158aff solid 2px;
 }
 
-header .btn-register:hover{
+header .btn-register:hover {
     color: #158aff;
     background: #fff;
 }
 
-/* ------------Hero-------------- */
+/* ------------Hero------------ */
 
 .hero {
     width: 100%;
@@ -98,7 +110,7 @@ header .btn-register:hover{
     color: #fff;
 }
 
-.hero a{
+.hero a {
     text-decoration: none;
     color: #fff;
     font-size: 1.2rem;
@@ -108,42 +120,143 @@ header .btn-register:hover{
     margin-top: 25px;
 }
 
-.hero a:hover{
+.hero a:hover {
     color: #158aff;
     background-color: #fff;
 }
 
-/* ------------Product Item-------------- */
+/* ------------Product Item------------ */
 
-.good-item{
+.good-item {
     display: flex;
-    background: #f2f2f2;
+    background: #fff;
     margin: 5px;
     border-radius: 5px;
     padding: 20px;
     gap: 20px;
 }
 
-.product-img{
+@media (max-width: 500px) {
+    .good-item {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.product-img,
+.product-img img {
     width: 200px;
 }
 
-.product-img img{
-    width: 200px;
+@media (max-width: 500px) {
+    .product-img,
+    .product-img img {
+        width: 100%;
+    }
 }
 
-.good-info{
+.good-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
-.good-info h1{
+.good-info a,
+.good-info h1 {
     font-size: 1.4rem;
+    text-decoration: none;
+    color: #000;
 }
 
-.good-info span{
+.price {
     font-size: 1.5rem;
     color: rgb(212, 180, 0);
     font-weight: bold;
+}
+
+.good-info i {
+    font-size: 1.2rem;
+}
+
+/* ------------Show Product------------ */
+
+.good-show {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.good-show-image {
+    padding: 50px;
+}
+
+.good-show-image img {
+    width: 100%;
+}
+
+.good-show-content{
+    padding: 50px;
+}
+
+.good-show-content-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.good-show-content-info {
+    gap: 20px;
+}
+
+.good-show-content-info a {
+    text-decoration: none;
+    color: #000;
+    display: inline;
+}
+
+.good-show-content-controlls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.good-show-content-controlls a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 0px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.good-show-content-controlls a:nth-child(1) {
+    background-color: rgb(0, 191, 114);
+}
+
+.good-show-content-controlls a:nth-child(2) {
+    background-color: rgb(191, 0, 0);
+}
+
+@media (max-width: 800px) {
+    .good-show {
+        grid-template-columns: auto;
+    }
+    .good-show-image {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .good-show-image img {
+        max-width: 300px;
+    }
+    .good-show-content {
+        padding: 10px;
+    }
 }
