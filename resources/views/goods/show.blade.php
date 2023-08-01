@@ -4,7 +4,8 @@
     <div class="container">
         <div class="good-show">
             <div class="good-show-image">
-                <img src="{{ asset('/images/no-product.png') }}" alt="">
+                <img src="{{ $good->image == null ? asset('/images/no-product.png') : asset('/storage/'.$good->image) }}"
+                        alt="{{ $good->title }}">
             </div>
             <div class="good-show-content">
                 <div class="good-show-content-info">
@@ -20,7 +21,7 @@
                     <p class="price">{{ $good->price }}$</p>
                 </div>
                 <div class="good-show-content-controlls">
-                    <a href="/">Edit</a>
+                    <a href="/goods/{{$good->id}}/edit">Edit</a>
                     <a href="/">delete</a>
                 </div>
             </div>

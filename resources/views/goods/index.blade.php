@@ -1,24 +1,29 @@
 @extends('layout')
 
 @section('content')
-@include('partials._hero')
+    @include('partials._hero')
     <div id="items" class="container grided">
         @foreach ($goods as $good)
-            <div class="good-item">
+            <a class="good-item" href="/goods/{{ $good->id }}">
                 <div class="product-img">
-                    <img src="/images/no-product.png" alt="{{ $good->title }}">
+                    <img src="{{ $good->image == null ? asset('/images/no-product.png') : asset('/storage/' . $good->image) }}"
+                        alt="{{ $good->title }}">
                 </div>
                 <div class="good-info">
-                    <a href="/goods/{{ $good->id }}">
-                        <h1>{{ $good->title }}</h1>
-                    </a>
+
+                    <h1>{{ $good->title }}</h1>
+
                     <p><i class="fa-solid fa-location-dot"></i> {{ $good->location }}</p>
                     <span class="price">{{ $good->price }}$</span>
                 </div>
-            </div>
+            </a>
         @endforeach
     </div>
-    <div class="container">
-        {{$goods->links()}}
+    <div class="container pagination-container">
+        {{ $goods->links() }}
+    </div>
+    <div class="add-good">
+        <p>&copy;Copyright 2023</p>
+        <a href="/goods/create">Post a Good</a>
     </div>
 @endsection

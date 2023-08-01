@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GoodController::class,'index']);
+Route::get('/', [GoodController::class,'index'])->name('home');
+
+Route::get('/goods/create',[GoodController::class,'create']);
+
+Route::get('/goods/{good}/edit',[GoodController::class,'edit']);
+
+Route::put('/goods/{good}',[GoodController::class,'update']);
+
+Route::post('/goods',[GoodController::class,'store']);
 
 Route::get('/goods/{good}',[GoodController::class,'show']);
+

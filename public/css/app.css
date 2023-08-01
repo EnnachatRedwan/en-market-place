@@ -4,6 +4,7 @@
     box-sizing: border-box;
     outline: none;
     font-family: "Open Sans", sans-serif;
+    text-decoration: none;
 }
 body {
     background-color: #f2f2f2;
@@ -37,23 +38,89 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
     list-style: none;
 }
 
-.pagination a {
+.btn {
+    display: block;
+    text-align: center;
     text-decoration: none;
     color: #fff;
     background-color: #0080ff;
     padding: 10px 30px;
     border-radius: 30px;
+    border: 2px solid #0080ff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #0080ff;
+    background-color: transparent;
 }
 
 .pagination span {
+    display: block;
+    text-align: center;
     color: #fff;
     background-color: #aaa;
     padding: 10px 30px;
     border-radius: 30px;
+}
+
+.pagination-container {
+    margin-bottom: 70px;
+}
+
+@media (max-width: 500px) {
+    .pagination {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .pagination li {
+        margin: 10px 0;
+    }
+
+    .pagination a {
+        width: 100%;
+    }
+}
+
+/* ------------Add good button------------ */
+
+.add-good {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0080ff99;
+    display: flex;
+    justify-content: end;
+    padding: 10px 20px;
+}
+.add-good a {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-align: center;
+}
+.add-good p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+@media (max-width: 500px) {
+    .add-good p {
+        display: none;
+    }
 }
 
 /* ------------Header------------ */
@@ -171,11 +238,14 @@ header .btn-register:hover {
 .product-img,
 .product-img img {
     width: 200px;
+    height: 100%;
+    object-fit: contain;
 }
 
 @media (max-width: 500px) {
     .product-img,
-    .product-img img {
+    .product-img img,
+    .good-info {
         width: 100%;
     }
 }
@@ -184,13 +254,12 @@ header .btn-register:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    color: #000;
 }
 
-.good-info a,
 .good-info h1 {
     font-size: 1.4rem;
     text-decoration: none;
-    color: #000;
 }
 
 .price {
@@ -220,6 +289,7 @@ header .btn-register:hover {
 
 .good-show-image img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .good-show-content {
@@ -278,10 +348,74 @@ header .btn-register:hover {
         justify-content: center;
         align-items: center;
     }
-    .good-show-image img {
-        max-width: 300px;
-    }
     .good-show-content {
         padding: 10px;
     }
+    .good-show-image {
+        width: 100%;
+        padding: 10px;
+    }
+    .good-show-image img {
+        width: 100%;
+    }
+}
+
+/* ------------Form------------ */
+
+.form {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px;
+    gap: 30px;
+}
+
+.form h1 span {
+    color: #0080ff;
+}
+
+.form-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field label {
+    font-size: 1.25rem;
+}
+
+.form-field label span,
+.form-field p {
+    color: #f00;
+}
+
+.form-field input,
+.form-field textarea {
+    border: 2px #ccc solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.form-controlls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
