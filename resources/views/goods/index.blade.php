@@ -6,7 +6,7 @@
         @foreach ($goods as $good)
             <a class="good-item" href="/goods/{{ $good->id }}">
                 <div class="product-img">
-                    <img src="{{ $good->image == null ? asset('/images/no-product.png') : asset('/storage/' . $good->image) }}"
+                    <img src="{{ $good->image == null ? asset('/images/no-product.jpg') : asset('/storage/' . $good->image) }}"
                         alt="{{ $good->title }}">
                 </div>
                 <div class="good-info">
@@ -23,7 +23,7 @@
         {{ $goods->links() }}
     </div>
     <div class="add-good">
-        <p>&copy;Copyright 2023</p>
+        <p>&copy; Copyright 2023</p>
         <a href="/goods/create">Post a Good</a>
     </div>
 @endsection
